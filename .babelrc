@@ -1,0 +1,28 @@
+{
+    "presets": [
+        [
+            "next/babel",
+            {
+                "preset-env": { "targets": { "node": "current" } }
+            }
+        ]
+    ],
+    "plugins": [
+        "transform-class-properties",
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "components": "./components",
+                    "pages": "./pages",
+                    "static": "./static",
+                    "styles": "./styles",
+                    "utils": "./utils",
+                    "hooks": "./hooks",
+                    "services": "./services"
+                }
+            }
+        ]
+    ]
+}

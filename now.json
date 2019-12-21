@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "regions": ["gru1"],
+    "name": "wa.hle.rs",
+    "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+}

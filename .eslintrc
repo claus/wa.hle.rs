@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "plugins": ["babel", "react", "react-hooks"],
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "globals": {},
+    "rules": {
+        "no-empty": 0,
+        "react/display-name": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    }
+}
