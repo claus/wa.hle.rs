@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = () => {
     return (
-        <h1>Hello World</h1>
+        <h1>Claus Wahlers</h1>
     );
 };
 
