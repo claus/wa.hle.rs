@@ -1,9 +1,12 @@
 const withPlugins = require('next-compose-plugins');
 const withSASS = require('@zeit/next-sass');
 const withSourceMaps = require('@zeit/next-source-maps')();
+const withMDX = require('@next/mdx')({ extension: /\.(md|mdx)$/ });
 
 module.exports = withPlugins(
     [
+        // MDX
+        [withMDX],
         // SASS, CSS Modules
         [withSASS, {
             cssModules: true,
@@ -16,5 +19,6 @@ module.exports = withPlugins(
     ],
     {
         target: 'serverless',
+        pageExtensions: ['js', 'md', 'mdx'],
     }
 );
