@@ -15,12 +15,9 @@
                 "root": ["./"],
                 "alias": {
                     "components": "./components",
-                    "pages": "./pages",
-                    "static": "./static",
                     "styles": "./styles",
                     "utils": "./utils",
-                    "hooks": "./hooks",
-                    "services": "./services"
+                    "hooks": "./hooks"
                 }
             }
         ]
