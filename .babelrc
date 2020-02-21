@@ -1,0 +1,25 @@
+{
+    "presets": [
+        [
+            "next/babel",
+            {
+                "preset-env": { "targets": { "node": "current" } }
+            }
+        ]
+    ],
+    "plugins": [
+        "transform-class-properties",
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "components": "./components",
+                    "styles": "./styles",
+                    "utils": "./utils",
+                    "hooks": "./hooks"
+                }
+            }
+        ]
+    ]
+}
