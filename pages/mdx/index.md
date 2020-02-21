@@ -1,4 +1,4 @@
-import styles from './test.scss'
+import styles from './index.module.scss'
 
 # Test
 

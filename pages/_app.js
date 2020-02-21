@@ -1,17 +1,16 @@
-import './styles/normalize.scss';
-import './styles/theme.scss';
+import 'components/styles/normalize.scss';
+import 'components/styles/theme.scss';
 
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
-class TerapiaFloralApp extends App {
+class WahlersApp extends App {
     renderHead() {
         return (
             // prettier-ignore
             <Head>
                 <meta charSet="utf-8" />
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="en_US" />
@@ -36,4 +35,4 @@ class TerapiaFloralApp extends App {
     }
 }
 
-export default TerapiaFloralApp;
+export default WahlersApp;

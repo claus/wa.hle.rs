@@ -1,0 +1,15 @@
+.footer {
+    position: absolute;
+    left: 1.75em;
+    bottom: 1.75em;
+}
+.link {
+    color: lightgray;
+    transition: color 0.3s;
+    &:not(:last-child) {
+        margin-right: 0.4rem;
+    }
+    &:hover {
+        color: gray;
+    }
+}
