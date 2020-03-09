@@ -12,7 +12,6 @@ module.exports = withPlugins(
     {
         target: 'serverless',
         pageExtensions: ['js', 'md', 'mdx'],
-        experimental: { scss: true },
         poweredByHeader: false,
     }
 );
