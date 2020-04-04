@@ -7,22 +7,24 @@
   },
   "scripts": {
     "dev": "now dev",
+    "build": "next build",
+    "start": "next start",
     "now-build": "next build"
   },
   "dependencies": {
-    "@mdx-js/loader": "1.5.7",
-    "@next/mdx": "9.3.0",
+    "@mdx-js/loader": "1.5.8",
+    "@next/mdx": "9.3.4",
     "axios": "0.19.2",
     "classnames": "2.2.6",
     "form-data": "3.0.0",
-    "next": "9.3.2",
+    "next": "9.3.4",
     "prop-types": "15.7.2",
-    "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "7.8.7",
-    "@babel/preset-env": "7.8.7",
+    "@babel/core": "7.9.0",
+    "@babel/preset-env": "7.9.0",
     "@madeinhaus/prettier-config": "1.0.0",
     "@zeit/next-source-maps": "0.0.4-canary.1",
     "babel-eslint": "10.1.0",
@@ -31,9 +33,9 @@
     "eslint": "6.8.0",
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-react": "7.19.0",
-    "eslint-plugin-react-hooks": "2.5.0",
+    "eslint-plugin-react-hooks": "3.0.0",
     "next-compose-plugins": "2.2.0",
     "node-sass": "4.13.1",
-    "prettier": "1.19.1"
+    "prettier": "2.0.2"
   }
 }
