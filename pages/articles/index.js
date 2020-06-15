@@ -1,23 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import fetchGists from 'utils/fetchGists';
 
 import Link from 'next/link';
 import Header from 'components/common/Header';
 import Footer from 'components/common/Footer';
 
-const Landing = ({ gists }) => {
+const Articles = ({ gists }) => {
     return (
         <main>
             <Header />
             <section>
                 <h1>Articles</h1>
                 <ol>
-                    {gists.slice(0, 5).map(gist => (
+                    {gists.map(gist => (
                         <li key={gist.id}>
-                            <Link
-                                as={`/articles/${gist.slug}`}
-                                href={`/articles/[slug]`}
-                            >
+                            <Link href={`/articles/${gist.slug}`}>
                                 <a>{gist.description}</a>
                             </Link>
                         </li>
@@ -29,8 +27,17 @@ const Landing = ({ gists }) => {
     );
 };
 
-Landing.propTypes = {
+Articles.propTypes = {
     gists: PropTypes.array,
 };
 
-export default Landing;
+export async function getStaticProps() {
+    const gists = await fetchGists();
+    return {
+        props: {
+            gists,
+        },
+    };
+}
+
+export default Articles;
