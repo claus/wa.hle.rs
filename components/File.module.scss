@@ -4,6 +4,16 @@
     margin: 0 0 1rem 0;
 }
 
+.link {
+    display: block;
+    margin-bottom: 0.3rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .item {
     color: #080;
     > span {

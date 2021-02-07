@@ -1,3 +1,23 @@
 .list {
     padding: 0;
 }
+
+.countdownMessage {
+    margin-top: 0.5rem;
+}
+
+.updateButton {
+    display: block;
+    padding: 0;
+    margin-top: 0.6rem;
+    margin-bottom: 3rem;
+    color: #44f;
+    font-size: 1.4rem;
+    &:hover {
+        color: #00f;
+        text-decoration: underline;
+    }
+    &.disabled {
+        visibility: hidden;
+    }
+}

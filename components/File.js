@@ -27,7 +27,7 @@ const File = ({ data }) => {
     const lastMod = data.headers['last-modified'] ? new Date(data.headers['last-modified']).toISOString() : null;
     return (
         <li className={styles.root}>
-            <a href={downloadUrl}>{data.url}</a>
+            <a className={styles.link} href={downloadUrl}>{data.url}</a>
             <div className={styles.item}>
                 <span>Downloaded: </span>
                 {data.time}
