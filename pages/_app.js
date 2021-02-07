@@ -5,7 +5,7 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
-class WahlersApp extends App {
+class FatherApp extends App {
     renderHead() {
         return (
             // prettier-ignore
@@ -15,8 +15,8 @@ class WahlersApp extends App {
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://wa.hle.rs" />
-                <link rel="canonical" href="https://wa.hle.rs" />
+                <meta property="og:url" content="https://father.wa.hle.rs" />
+                <link rel="canonical" href="https://father.wa.hle.rs" />
                 <link rel="icon" href="/images/favicon-32.png" sizes="32x32" />
                 <link rel="icon" href="/images/favicon-64.png" sizes="64x64" />
                 <link rel="icon" href="/images/favicon-128.png" sizes="128x128" />
@@ -35,4 +35,4 @@ class WahlersApp extends App {
     }
 }
 
-export default WahlersApp;
+export default FatherApp;
