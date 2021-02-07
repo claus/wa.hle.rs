@@ -19,7 +19,7 @@ const Landing = ({ digest }) => {
 
 export async function getServerSideProps() {
     const response = await axios.get(
-        'http://father.codeazur.com.br/digest.json'
+        'https://father.codeazur.com.br/digest.json'
     );
     const digest = Object.entries(response.data)
         .sort(([,a], [,b]) => {

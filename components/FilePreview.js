@@ -5,7 +5,7 @@ import styles from './FilePreview.module.scss';
 
 const FilePreview = ({ data }) => {
     const fileName = `${data.sha256}.${data.ext}`;
-    const downloadUrl = `http://father.codeazur.com.br/files/${fileName}`;
+    const downloadUrl = `https://father.codeazur.com.br/files/${fileName}`;
     if (['jpg', 'jpeg', 'gif', 'png'].includes(data.ext)) {
         return (
             <div className={styles.root}>

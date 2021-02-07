@@ -23,7 +23,7 @@ const File = ({ data }) => {
     }, [data])
 
     const fileName = `${data.sha256}.${data.ext}`;
-    const downloadUrl = `http://father.codeazur.com.br/files/${fileName}`;
+    const downloadUrl = `https://father.codeazur.com.br/files/${fileName}`;
     const lastMod = data.headers['last-modified'] ? new Date(data.headers['last-modified']).toISOString() : null;
     return (
         <li className={styles.root}>
