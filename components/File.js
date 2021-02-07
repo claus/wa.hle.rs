@@ -41,6 +41,9 @@ const File = ({ data }) => {
                 </div>
             )}
             <div className={styles.item}>
+                <span>Content-Type: {data.headers['content-type'] || 'Unknown'}</span>
+            </div>
+            <div className={styles.item}>
                 <span>Size: {data.size}</span>
             </div>
             <FilePreview data={data} />

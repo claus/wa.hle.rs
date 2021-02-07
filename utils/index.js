@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 export async function loadDigest() {
-    const response = await axios.get(
-        'https://father.codeazur.com.br/digest.json'
-    );
+    const response = await axios.get('https://father.codeazur.com.br/digest.json');
     const digest = Object.entries(response.data)
         .sort(([,a], [,b]) => {
             const aDate = new Date(a.time).getTime();
