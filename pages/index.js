@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { formatDistance, lightFormat } from 'date-fns';
-import { loadDigest, formatNumber } from 'utils';
+import { lightFormat } from 'date-fns';
+import { loadDigest } from 'utils';
 
 import File from 'components/File';
 
