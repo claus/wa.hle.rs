@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { formatDistanceToNow } from 'date-fns'
 
+import Headers from './Headers';
 import FilePreview from './FilePreview';
 
 import styles from './File.module.scss';
@@ -46,6 +47,7 @@ const File = ({ data }) => {
             <div className={styles.item}>
                 <span>Size: {data.size}</span>
             </div>
+            <Headers data={data} />
             <FilePreview data={data} />
             {/* <pre><code>{JSON.stringify(data, undefined, 2)}</code></pre> */}
         </li>

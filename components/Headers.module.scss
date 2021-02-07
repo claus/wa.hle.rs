@@ -1,0 +1,42 @@
+.root {
+    margin-top: 0.1rem;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    color: blue;
+    &:hover > .text {
+        text-decoration: underline;
+    }
+}
+
+.text {
+}
+
+.button {
+    color: #888;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+    width: 2rem;
+    transform: translateY(0.2rem);
+    &.expanded {
+        transform: rotate(90deg) translate(0.1rem, 0.3rem);
+    }
+}
+
+.headerList {
+    padding: 0 0 0 2rem;
+    margin: 0.2rem 0 1.5rem 0;
+}
+
+.headerItem {
+    list-style: none;
+    margin-top: 0.1rem;
+}
+
+.headerName {
+    font-weight: bold;
+}
