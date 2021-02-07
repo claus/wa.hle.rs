@@ -4,11 +4,13 @@ import axios from 'axios';
 
 import File from 'components/File';
 
+import styles from './index.module.scss';
+
 const Landing = ({ digest }) => {
     return (
         <main>
             <h1>Father</h1>
-            <ul>
+            <ul className={styles.list}>
                 {digest.map(data => <File key={data.sha256} data={data} />)}
             </ul>
         </main>
@@ -21,8 +23,8 @@ export async function getServerSideProps() {
     );
     const digest = Object.entries(response.data)
         .sort(([,a], [,b]) => {
-            const aDate = new Date(a.createdAt).getTime();
-            const bDate = new Date(b.createdAt).getTime();
+            const aDate = new Date(a.time).getTime();
+            const bDate = new Date(b.time).getTime();
             return bDate - aDate;
         })
         .map(([key,value]) => ({

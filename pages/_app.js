@@ -16,10 +16,14 @@ class FatherApp extends App {
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://father.wa.hle.rs" />
+                <meta property="og:image" content="https://father.wa.hle.rs/father.jpg" />
+                <meta property="og:description" content="Real time archive of the Father Is A Liar ARG website" />
+                <meta property="og:title" content="Father Archive" />
                 <link rel="canonical" href="https://father.wa.hle.rs" />
                 <link rel="icon" href="/images/favicon-32.png" sizes="32x32" />
                 <link rel="icon" href="/images/favicon-64.png" sizes="64x64" />
                 <link rel="icon" href="/images/favicon-128.png" sizes="128x128" />
+                <title>Father Archive</title>
             </Head>
         );
     }
