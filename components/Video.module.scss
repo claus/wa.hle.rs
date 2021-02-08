@@ -1,0 +1,17 @@
+.root {
+    display: flex;
+    list-style: none;
+}
+
+.thumbnail {
+    .image {
+        width: 15rem;
+    }
+}
+
+.metadata {
+    margin-left: 1rem;
+    .title {
+        font-weight: bold;
+    }
+}

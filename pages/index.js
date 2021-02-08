@@ -4,13 +4,14 @@ import cx from 'classnames';
 import { lightFormat } from 'date-fns';
 import { loadDigest } from 'utils';
 
-import File from 'components/File';
+import SectionChannel from 'components/SectionChannel';
+import SectionWebsite from 'components/SectionWebsite';
 
 import styles from './index.module.scss';
 
 const LOAD_INTERVAL = 15 * 60 * 1000;
 
-const Landing = ({ initialDigest }) => {
+const Landing = ({ digest: initialDigest, channel: initialChannel }) => {
     const loadInterval = useRef();
     const updateInterval = useRef();
     const [lastLoad, setLastLoad] = useState(Date.now());
@@ -18,10 +19,13 @@ const Landing = ({ initialDigest }) => {
     const [isUpdating, setIsUpdating] = useState(false);
     const [forceUpdate, setForceUpdate] = useState(0);
     const [digest, setDigest] = useState(initialDigest)
+    const [channel, setChannel] = useState(initialChannel)
 
     const update = async () => {
         setIsUpdating(true);
-        setDigest(await loadDigest());
+        const { digest, channel } = await loadDigest();
+        setDigest(digest);
+        setChannel(channel);
         setLastLoad(Date.now());
         setIsUpdating(false);
     }
@@ -64,9 +68,8 @@ const Landing = ({ initialDigest }) => {
             <h1>Father Archive</h1>
             <div className={styles.countdownMessage}>{countdownMessage}</div>
             <button className={updateButtonClass} onClick={handleUpdateNowClick}>Update now</button>
-            <ul className={styles.list}>
-                {digest.map(data => <File key={data.sha256} data={data} />)}
-            </ul>
+            <SectionChannel channel={channel} />
+            <SectionWebsite digest={digest} />
         </main>
     );
 };
@@ -74,12 +77,13 @@ const Landing = ({ initialDigest }) => {
 export async function getServerSideProps() {
     const initialDigest = await loadDigest();
     return {
-        props: { initialDigest },
+        props: { ...initialDigest },
     };
 }
 
 Landing.propTypes = {
-    initialDigest: PropTypes.array.isRequired,
+    digest: PropTypes.array.isRequired,
+    channel: PropTypes.array.isRequired,
 }
 
 export default Landing;

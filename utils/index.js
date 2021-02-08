@@ -12,12 +12,8 @@ export async function loadDigest() {
             ...value,
             sha256: key
         }));
-    return digest;
-}
 
-export function formatNumber(value) {
-    if (value < 10) {
-        return `0${value}`;
-    }
-    return `${value}`;
+    const channel = await axios.get('https://father.codeazur.com.br/channel.json');
+
+    return { digest, channel: channel.data };
 }
