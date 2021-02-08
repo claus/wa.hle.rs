@@ -49,6 +49,14 @@ button {
     background-color: transparent;
 }
 
+a {
+    color: #44f;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 * {
     outline: none;
 }

@@ -29,7 +29,7 @@ const Headers = ({ data }) => {
         <div className={styles.root}>
             <button className={styles.toggle} onClick={handleToggleClick}>
                 <span className={styles.text}>Headers</span>
-                <span className={buttonClass}>▶</span>
+                <img className={buttonClass} src="/triangle.svg" />
             </button>
             {expanded && <ul className={styles.headerList}>{headers}</ul>}
         </div>

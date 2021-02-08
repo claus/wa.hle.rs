@@ -1,3 +1,10 @@
+.root {
+    > p {
+        margin: 0.2rem 0 0.5rem 0;
+        font-size: 1.4rem;
+    }
+}
+
 .list {
     padding: 0;
 }
