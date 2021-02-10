@@ -8,7 +8,6 @@ export async function loadDigest() {
             const bDate = new Date(b.time).getTime();
             return bDate - aDate;
         });
-    console.log(digest)
 
     const channel = await axios.get('https://father.codeazur.com.br/channel.json');
 
