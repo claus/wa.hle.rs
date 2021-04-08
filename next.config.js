@@ -18,6 +18,7 @@ module.exports = withPlugins(
             XKCD_BOT_PASSWORD: process.env.XKCD_BOT_PASSWORD,
             XKCD_BOT_MASTODON_ACCOUNT_ID: process.env.XKCD_BOT_MASTODON_ACCOUNT_ID,
             XKCD_BOT_MASTODON_TOKEN: process.env.XKCD_BOT_MASTODON_TOKEN,
+            NEUTRINO_API_KEY: process.env.NEUTRINO_API_KEY,
         },
     }
 );

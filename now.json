@@ -7,7 +7,8 @@
             "XKCD_BOT_USERNAME": "@wahlers-xkcd-bot-username",
             "XKCD_BOT_PASSWORD": "@wahlers-xkcd-bot-password",
             "XKCD_BOT_MASTODON_ACCOUNT_ID": "@wahlers-xkcd-bot-mastodon-account-id",
-            "XKCD_BOT_MASTODON_TOKEN": "@wahlers-xkcd-bot-mastodon-token"
+            "XKCD_BOT_MASTODON_TOKEN": "@wahlers-xkcd-bot-mastodon-token",
+            "NEUTRINO_API_KEY": "@wahlers-neutrino-api-key"
         }
     }
 }

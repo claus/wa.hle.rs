@@ -49,7 +49,8 @@ function downloadImage(url) {
         maxContentLength: 10 * 1024 * 1024,
         maxBodyLength: 10 * 1024 * 1024,
     };
-    return axios.get(url, config).then(response => {
+    const neutrino = `https://neutrinoapi.net/image-resize?user-id=mastodon&api-key=${process.env.NEUTRINO_API_KEY}&image-url=${url}&width=1024&height=1024&format=png`;
+    return axios.get(neutrino, config).then(response => {
         if (response.data) {
             return {
                 contentType: response.headers['content-type'],
