@@ -44,7 +44,7 @@ const Landing = () => {
                             <input
                                 type="submit"
                                 name="submit"
-                                value="Submit"
+                                value="Hack the planet"
                                 className={styles.submit}
                             />
                         </div>
