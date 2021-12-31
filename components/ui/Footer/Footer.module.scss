@@ -1,0 +1,27 @@
+@import 'styles/breakpoints';
+@import 'styles/fonts';
+
+.footer {
+    position: absolute;
+    left: 1.75em;
+    bottom: 1.75em;
+    width: 20rem;
+}
+
+.link {
+    display: inline-block;
+    color: lightgray;
+    transition: color 0.3s;
+
+    > svg {
+        display: inline-block;
+    }
+
+    &:not(:last-child) {
+        margin-right: 0.4rem;
+    }
+
+    &:hover {
+        color: gray;
+    }
+}

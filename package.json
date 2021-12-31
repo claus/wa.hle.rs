@@ -1,41 +1,34 @@
 {
-  "description": "Claus Wahlers Keypunch Operations",
-  "repository": "git@github.com:claus/wa.hle.rs.git",
-  "license": "UNLICENSED",
-  "engines": {
-    "node": ">=10.0"
-  },
+  "name": "haus-next-starter",
+  "description": "A skeleton Next.js app to quickly get started.",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "now dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "now-build": "next build"
+    "lint": "next lint",
+    "clean": "node scripts/clean.mjs",
+    "scaffold": "node scripts/create-component.mjs"
   },
   "dependencies": {
-    "@mdx-js/loader": "1.5.8",
-    "@next/mdx": "9.3.4",
-    "axios": "0.21.1",
-    "classnames": "2.2.6",
-    "form-data": "3.0.0",
-    "next": "9.3.4",
-    "prop-types": "15.7.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "axios": "0.24.0",
+    "form-data": "4.0.0",
+    "next": "12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "1.45.2",
+    "webfontloader": "1.6.28",
+    "zustand": "3.6.8"
   },
   "devDependencies": {
-    "@babel/core": "7.9.0",
-    "@babel/preset-env": "7.9.0",
-    "@madeinhaus/prettier-config": "1.0.0",
-    "@zeit/next-source-maps": "0.0.4-canary.1",
-    "babel-eslint": "10.1.0",
-    "babel-plugin-module-resolver": "4.0.0",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "eslint": "6.8.0",
-    "eslint-plugin-babel": "5.3.0",
-    "eslint-plugin-react": "7.19.0",
-    "eslint-plugin-react-hooks": "3.0.0",
-    "next-compose-plugins": "2.2.0",
-    "node-sass": "4.13.1",
-    "prettier": "2.0.2"
+    "@madeinhaus/prettier-config": "1.1.0",
+    "chalk": "5.0.0",
+    "eslint": "8.5.0",
+    "eslint-config-next": "12.0.7",
+    "figlet": "1.5.2",
+    "inquirer": "8.2.0",
+    "prettier": "2.5.1",
+    "shelljs": "0.8.4",
+    "stylelint": "14.2.0"
   }
 }

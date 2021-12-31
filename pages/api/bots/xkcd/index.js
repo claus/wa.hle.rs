@@ -126,7 +126,7 @@ function GET(req, res) {
     );
 }
 
-export default (req, res) => {
+const handler = (req, res) => {
     if (req.method === 'GET') {
         GET(req, res);
     } else {
@@ -137,3 +137,5 @@ export default (req, res) => {
         });
     }
 };
+
+export default handler;

@@ -1,53 +1,52 @@
-$tablet: 720px;
-$desktop: 1120px;
-$largeDesktop: 1600px;
-$hugeDesktop: 1920px;
+$small: 375px;
+$medium: 768px;
+$large: 1280px;
+$xlarge: 1920px;
 
-@mixin tablet {
-    @media (min-width: $tablet) {
-        @content;
-    }
-}
-@mixin desktop {
-    @media (min-width: $desktop) {
-        @content;
-    }
-}
-@mixin largeDesktop {
-    @media (min-width: $largeDesktop) {
-        @content;
-    }
-}
-@mixin hugeDesktop {
-    @media (min-width: $hugeDesktop) {
+@mixin small {
+    @media (min-width: $small) {
         @content;
     }
 }
 
-@mixin mobileOnly {
-    @media (max-width: #{$tablet - 1}) {
-        @content;
-    }
-}
-@mixin tabletOnly {
-    @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
-        @content;
-    }
-}
-@mixin desktopOnly {
-    @media (min-width: $desktop) and (max-width: #{$largeDesktop - 1}) {
-        @content;
-    }
-}
-@mixin largeDesktopOnly {
-    @media (min-width: $largeDesktop) and (max-width: #{$hugeDesktop - 1}) {
+@mixin medium {
+    @media (min-width: $medium) {
         @content;
     }
 }
 
-:export {
-    tablet: $tablet;
-    desktop: $desktop;
-    largeDesktop: $largeDesktop;
-    hugeDesktop: $hugeDesktop;
+@mixin large {
+    @media (min-width: $large) {
+        @content;
+    }
+}
+
+@mixin xlarge {
+    @media (min-width: $xlarge) {
+        @content;
+    }
+}
+
+@mixin tinyOnly {
+    @media (max-width: $small - 1) {
+        @content;
+    }
+}
+
+@mixin smallOnly {
+    @media (max-width: $medium - 1) {
+        @content;
+    }
+}
+
+@mixin mediumOnly {
+    @media (min-width: $medium) and (max-width: $large - 1) {
+        @content;
+    }
+}
+
+@mixin largeOnly {
+    @media (min-width: $large) and (max-width: $xlarge - 1) {
+        @content;
+    }
 }

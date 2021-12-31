@@ -1,24 +1,40 @@
-const withPlugins = require('next-compose-plugins');
-const withSourceMaps = require('@zeit/next-source-maps')();
-const withMDX = require('@next/mdx')({ extension: /\.(md|mdx)$/ });
-
-module.exports = withPlugins(
-    [
-        // MDX
-        [withMDX],
-        // Deploy source maps in production
-        [withSourceMaps],
-    ],
+const securityHeaders = [
     {
-        target: 'serverless',
-        pageExtensions: ['js', 'md', 'mdx'],
-        poweredByHeader: false,
-        env: {
-            XKCD_BOT_USERNAME: process.env.XKCD_BOT_USERNAME,
-            XKCD_BOT_PASSWORD: process.env.XKCD_BOT_PASSWORD,
-            XKCD_BOT_MASTODON_ACCOUNT_ID: process.env.XKCD_BOT_MASTODON_ACCOUNT_ID,
-            XKCD_BOT_MASTODON_TOKEN: process.env.XKCD_BOT_MASTODON_TOKEN,
-            NEUTRINO_API_KEY: process.env.NEUTRINO_API_KEY,
-        },
-    }
-);
+        key: 'X-Frame-Options',
+        value: 'SAMEORIGIN',
+    },
+    {
+        key: 'X-Content-Type-Options',
+        value: 'nosniff',
+    },
+    {
+        key: 'Referrer-Policy',
+        value: 'strict-origin-when-cross-origin',
+    },
+    {
+        key: 'X-XSS-Protection',
+        value: '1; mode=block',
+    },
+    {
+        key: 'Permissions-Policy',
+        value: 'camera=(), microphone=(), geolocation=()',
+    },
+    {
+        key: 'X-DNS-Prefetch-Control',
+        value: 'on',
+    },
+];
+
+module.exports = {
+    poweredByHeader: false,
+    webpack5: true,
+    swcMinify: true,
+    async headers() {
+        return [
+            {
+                source: '/(.*)',
+                headers: securityHeaders,
+            },
+        ];
+    },
+};
