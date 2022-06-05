@@ -36,7 +36,10 @@ const Head = () => (
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#9e9e9e" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#454545" />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
     </NextHead>
 );
 
