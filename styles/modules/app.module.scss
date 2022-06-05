@@ -9,11 +9,11 @@
 
 .transition-appear,
 .transition-in {
-    animation: fadeIn 500ms linear forwards;
+    animation: fadeIn 300ms linear forwards;
 }
 
 .transition-out {
-    animation: fadeOut 500ms linear forwards;
+    animation: fadeOut 300ms linear forwards;
 }
 
 .transition-idle {
@@ -33,20 +33,12 @@
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
     100% {
         opacity: 1;
     }
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
     100% {
         opacity: 0;
     }

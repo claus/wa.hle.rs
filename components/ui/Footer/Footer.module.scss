@@ -10,7 +10,7 @@
 
 .link {
     display: inline-block;
-    color: lightgray;
+    color: var(--color-text-dimmed);
     transition: color 0.3s;
 
     > svg {
@@ -19,9 +19,5 @@
 
     &:not(:last-child) {
         margin-right: 0.4rem;
-    }
-
-    &:hover {
-        color: gray;
     }
 }
