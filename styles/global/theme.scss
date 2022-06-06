@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('/assets/fonts/open-sans-400.woff2') format('woff2'),
+        url('/assets/fonts/open-sans-400.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''), url('/assets/fonts/dm-sans-500.woff2') format('woff2'),
+        url('/assets/fonts/dm-sans-500.woff') format('woff');
+}

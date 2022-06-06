@@ -20,15 +20,15 @@ import { useTransitionState } from 'hooks/usePageTransitionStore';
 import NextHead from 'next/head';
 
 import { ThemeProvider } from 'components/misc/Theme';
+import Header from 'components/ui/Header';
 import PageTransition from 'components/ui/PageTransition';
 import GridOverlay from 'components/ui/GridOverlay';
 
 import styles from 'styles/modules/app.module.scss';
 
 const fontFamilies = [
-    'neue-haas-grotesk-display:n7',
-    'neue-haas-grotesk-text:n4,n5,n7',
-    'interstate-mono:n4',
+    'Open Sans:n4',
+    'DM Sans:n5',
 ];
 
 // prettier-ignore
@@ -37,6 +37,8 @@ const Head = () => (
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#9e9e9e" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#454545" />
+        <link rel="preload" href="/assets/fonts/open-sans-400.woff2" as="font" type="font/woff2" crossOrigin="true" />
+        <link rel="preload" href="/assets/fonts/dm-sans-500.woff2" as="font" type="font/woff2" crossOrigin="true" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -58,6 +60,7 @@ function App({ Component, pageProps }) {
         <>
             <Head />
             <ThemeProvider>
+                <Header />
                 <PageTransition className={transitionClass}>
                     <Component {...pageProps} key={removeHash(router.asPath)} />
                 </PageTransition>

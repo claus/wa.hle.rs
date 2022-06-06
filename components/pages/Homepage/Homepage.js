@@ -4,22 +4,20 @@
 import Head from 'components/misc/Head';
 // import Link from 'components/ui/Link';
 // import Text from 'components/ui/Text';
-import Header from 'components/ui/Header';
 import Footer from 'components/ui/Footer';
 
-import styles from './Landing.module.scss';
+import styles from './Homepage.module.scss';
 
-const Landing = () => {
+const Homepage = () => {
     // const fontsLoaded = useFontsLoaded();
     // const isTouch = useIsTouch();
     // console.log(`fontsLoaded: ${fontsLoaded}, isTouch: ${isTouch}`);
     return (
         <div className={styles.root}>
             <Head title="Claus Wahlers" description="Claus Wahlers" />
-            <Header />
             <Footer />
         </div>
     );
 };
 
-export default Landing;
+export default Homepage;

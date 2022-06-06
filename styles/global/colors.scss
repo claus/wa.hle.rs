@@ -1,13 +1,15 @@
 :root {
     &[data-theme='dark'] {
         --color-background: #1e1e1e;
+        --color-background-panel: #0c0c0c;
         --color-text: #ffffff;
         --color-text-dimmed: #888;
-        --color-text-highlight: #66f;
+        --color-text-highlight: #7575FF;
     }
 
     &[data-theme='light'] {
-        --color-background: #f8f8f8;
+        --color-background: #f4f4f4;
+        --color-background-panel: #fff;
         --color-text: #000;
         --color-text-dimmed: #888;
         --color-text-highlight: #22f;

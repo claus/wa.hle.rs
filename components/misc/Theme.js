@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 
 const DARK = 'dark';
 const LIGHT = 'light';
-const LS_KEY = 'theme';
+const LOCALSTORAGE_KEY = 'theme';
 
 export const ThemeContext = createContext();
 
@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
 
     const setTheme = value => {
         setThemeInternal(value);
-        localStorage.setItem(LS_KEY, value);
+        localStorage.setItem(LOCALSTORAGE_KEY, value);
         document.documentElement.dataset.theme = value;
     };
 
@@ -36,17 +36,18 @@ export const ThemeProvider = ({ children }) => {
     );
 };
 
-const themeScript = `(function() {
-    function getTheme() {
-        const saved = window.localStorage.getItem('${LS_KEY}');
-        if (typeof saved === 'string') return saved;
-        const mql = window.matchMedia('(prefers-color-scheme: dark)');
-        if (typeof mql.matches === 'boolean') return mql.matches ? '${DARK}' : '${LIGHT}';
-        return '${DARK}';
-    }
-    document.documentElement.dataset.theme = getTheme();
-})();`;
+// const themeScript = `(function() {
+//     function getTheme() {
+//         const saved = window.localStorage.getItem('${LOCALSTORAGE_KEY}');
+//         if (typeof saved === 'string') return saved;
+//         const mql = window.matchMedia('(prefers-color-scheme: dark)');
+//         if (typeof mql.matches === 'boolean') return mql.matches ? '${DARK}' : '${LIGHT}';
+//         return '${DARK}';
+//     }
+//     document.documentElement.dataset.theme = getTheme();
+// })();`;
 
 export const ThemeScript = () => {
+    const themeScript = `function a(){let a=window.localStorage.getItem("${LOCALSTORAGE_KEY}");if("string"==typeof a)return a;let b=window.matchMedia("(prefers-color-scheme: dark)");return"boolean"==typeof b.matches?b.matches?"${DARK}":"${LIGHT}":"${DARK}"}document.documentElement.dataset.theme=a()`;
     return <script dangerouslySetInnerHTML={{ __html: themeScript }} />;
 };

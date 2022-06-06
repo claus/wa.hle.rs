@@ -2,7 +2,8 @@
 @import 'styles/fonts';
 
 .main {
-    @include haasRoman;
+    @include openSans;
+    padding-top: var(--header-height);
     font-size: 1.4rem;
     opacity: 0;
 }
