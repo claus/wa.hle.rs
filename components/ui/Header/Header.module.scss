@@ -33,9 +33,8 @@
     }
 }
 
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+@supports (backdrop-filter: none) {
     .header {
-        -webkit-backdrop-filter: saturate(180%) blur(10px);
         backdrop-filter: saturate(180%) blur(10px);
     }
 }
