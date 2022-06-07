@@ -99,35 +99,31 @@ const publishStatus = comic => mediaId => {
 };
 
 function GET(req, res) {
-    res.status(200);
-    res.json({ status: 'Technical difficulties!' });
-    return;
-
-    // verify().then(
-    //     Promise.all([getLatestId(), getLatestComic()])
-    //         .then(([id, comic]) => {
-    //             // console.log(JSON.stringify(comic, null, 4));
-    //             if (+comic.num > +id) {
-    //                 return downloadImage(comic.img)
-    //                     .then(uploadImage(comic))
-    //                     .then(publishStatus(comic))
-    //                     .then(response => {
-    //                         // console.log(response);
-    //                         res.status(200);
-    //                         res.json(response);
-    //                     });
-    //             } else {
-    //                 const msg = `No new XKCD available (have: ${id}, avail: ${comic.num})`;
-    //                 res.status(200);
-    //                 res.json({ status: msg });
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.log(err.message);
-    //             res.status(500);
-    //             res.json({ error: err.message });
-    //         })
-    // );
+    verify().then(
+        Promise.all([getLatestId(), getLatestComic()])
+            .then(([id, comic]) => {
+                // console.log(JSON.stringify(comic, null, 4));
+                if (+comic.num > +id) {
+                    return downloadImage(comic.img)
+                        .then(uploadImage(comic))
+                        .then(publishStatus(comic))
+                        .then(response => {
+                            // console.log(response);
+                            res.status(200);
+                            res.json(response);
+                        });
+                } else {
+                    const msg = `No new XKCD available (have: ${id}, avail: ${comic.num})`;
+                    res.status(200);
+                    res.json({ status: msg });
+                }
+            })
+            .catch(err => {
+                console.log(err.message);
+                res.status(500);
+                res.json({ error: err.message });
+            })
+    );
 }
 
 const handler = (req, res) => {
