@@ -25,8 +25,14 @@ const Homepage = () => {
                 </h1>
                 <p>
                     I write software for{' '}
-                    <Link href="https://github.com/claus">fun</Link> and{' '}
-                    <Link href="https://madeinhaus.com">profit</Link>.
+                    <Link href="https://github.com/claus" rel="me">
+                        fun
+                    </Link>{' '}
+                    and{' '}
+                    <Link href="https://madeinhaus.com">
+                        profit
+                    </Link>
+                    .
                 </p>
                 {/* <section>
                     <h2>
@@ -54,23 +60,28 @@ const Homepage = () => {
                         </li>
                         <li>
                             Github:{' '}
-                            <Link href="https://github.com/claus">claus</Link>
+                            <Link href="https://github.com/claus" rel="me">
+                                claus
+                            </Link>
                         </li>
                         <li>
                             Twitter:{' '}
-                            <Link href="https://twitter.com/cwahlers">
+                            <Link href="https://twitter.com/cwahlers" rel="me">
                                 @cwahlers
                             </Link>
                         </li>
                         <li>
                             Mastodon (pt/en):{' '}
-                            <Link href="https://mastodon.com.br/@claus">
+                            <Link
+                                href="https://mastodon.com.br/@claus"
+                                rel="me"
+                            >
                                 @claus@mastodon.com.br
                             </Link>
                         </li>
                         <li>
                             Mastodon (de/en):{' '}
-                            <Link href="https://chaos.social/@claus">
+                            <Link href="https://chaos.social/@claus" rel="me">
                                 @claus@chaos.social
                             </Link>
                         </li>

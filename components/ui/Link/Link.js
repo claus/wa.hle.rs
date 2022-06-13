@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-const LinkNoScroll = ({ children, href }) => (
+const LinkNoScroll = ({ children, href, ...props }) => (
     <Link scroll={false} href={href}>
-        <a>{children}</a>
+        <a {...props}>{children}</a>
     </Link>
 );
 
