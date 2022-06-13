@@ -1,14 +1,14 @@
 // Font definitions
 // -------------------------
 
-@mixin openSans {
-    font-family: 'Open Sans', sans-serif;
+@mixin inconsolata-regular {
+    font-family: 'Inconsolata', monospace;
     font-weight: 400;
     font-style: normal;
 }
 
-@mixin dmSans {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
+@mixin inconsolata-bold {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
     font-style: normal;
 }

@@ -2,9 +2,7 @@
 @import 'styles/fonts';
 
 .main {
-    @include openSans;
-    padding-top: var(--header-height);
-    font-size: 1.4rem;
+    padding: var(--grid-margin);
     opacity: 0;
 }
 
@@ -19,18 +17,6 @@
 
 .transition-idle {
     opacity: 1;
-}
-
-@include medium {
-    .main {
-        font-size: 1.5rem;
-    }
-}
-
-@include large {
-    .main {
-        font-size: 1.6rem;
-    }
 }
 
 @keyframes fadeIn {
