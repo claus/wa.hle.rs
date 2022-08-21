@@ -10,11 +10,6 @@ const LinkNoScroll = ({ children, href, ...props }) => (
 LinkNoScroll.propTypes = {
     children: PropTypes.node.isRequired,
     href: PropTypes.string.isRequired,
-    passHref: PropTypes.bool,
-};
-
-LinkNoScroll.defaultProps = {
-    passHref: true,
 };
 
 export default LinkNoScroll;

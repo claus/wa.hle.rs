@@ -29,3 +29,30 @@ export function removeHash(url) {
 export function getHash(url) {
     return new URL(url, 'http://a').hash;
 }
+
+export function wait(delay) {
+    return new Promise(resolve => {
+        setTimeout(resolve, delay);
+    });
+}
+
+const R_INTERNAL = /^\/.?/;
+const R_EXTERNAL = /^((https?:)?\/\/|mailto:)/;
+export function fixUrl(url) {
+    if (url.match(R_EXTERNAL)) {
+        return {
+            type: 'external',
+            url,
+        };
+    } else if (url.match(R_INTERNAL)) {
+        return {
+            type: 'internal',
+            url,
+        };
+    } else {
+        return {
+            type: 'error',
+            url,
+        };
+    }
+}

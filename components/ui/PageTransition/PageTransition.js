@@ -31,8 +31,8 @@ function getScrollPos(url) {
     return { x: 0, y: 0, ...scrollPos };
 }
 
-const FADE_IN_DURATION = 500;
-const FADE_OUT_DURATION = 500;
+const FADE_IN_DURATION = 300;
+const FADE_OUT_DURATION = 300;
 
 const PageTransition = forwardRef(({ as, className, children }, ref) => {
     const router = useRouter();

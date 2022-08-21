@@ -8,11 +8,11 @@
 
 .transition-appear,
 .transition-in {
-    animation: fadeIn 300ms linear forwards;
+    animation: fadeIn 300ms ease-in-out forwards;
 }
 
 .transition-out {
-    animation: fadeOut 300ms linear forwards;
+    animation: fadeOut 300ms ease-in-out forwards;
 }
 
 .transition-idle {

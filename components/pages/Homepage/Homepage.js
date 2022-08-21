@@ -2,42 +2,29 @@
 // import { useIsTouch } from 'hooks/useTouchDetection';
 
 import Head from 'components/misc/Head';
-import Link from 'components/ui/Link';
+// import Link from 'components/ui/Link';
+import RichText from 'components/ui/RichText';
+import ErrorGraphQL from 'components/ui/ErrorGraphQL';
 
 import styles from './Homepage.module.scss';
 
-const Homepage = () => {
-    // const fontsLoaded = useFontsLoaded();
-    // const isTouch = useIsTouch();
-    // console.log(`fontsLoaded: ${fontsLoaded}, isTouch: ${isTouch}`);
+const Homepage = ({ error, title, content }) => {
+    if (error) return <ErrorGraphQL error={error} />;
+    const {
+        headline,
+        description,
+        // stuffHeadline,
+        contactHeadline,
+        contactContent,
+    } = content;
     return (
         <>
-            <Head title="Claus Wahlers" description="Claus Wahlers" />
+            <Head title={title} description="Claus Wahlers" />
             <div className={styles.root}>
-                <h1>
-                    <span>Hello! </span>
-                    <span>
-                        My name is <strong>Claus Wahlers. </strong>
-                    </span>
-                    <span>
-                        This is <strong>my website.</strong>
-                    </span>
-                </h1>
-                <p>
-                    I write software for{' '}
-                    <Link href="https://github.com/claus" rel="me">
-                        fun
-                    </Link>{' '}
-                    and{' '}
-                    <Link href="https://madeinhaus.com">
-                        profit
-                    </Link>
-                    .
-                </p>
+                <RichText as="h1" document={headline} className={styles.nobr} />
+                <RichText document={description} />
                 {/* <section>
-                    <h2>
-                        Here are some <strong>tools</strong> i wrote:
-                    </h2>
+                    <RichText as="h2" document={stuffHeadline} />
                     <ul>
                         <Tool href="/outguess-online" title="Outguess Online">
                             <p>Steganography from the early 2000s.</p>
@@ -51,41 +38,8 @@ const Homepage = () => {
                     </ul>
                 </section> */}
                 <section className={styles.contact}>
-                    <h2>
-                        How to <strong>contact</strong> me:
-                    </h2>
-                    <ul>
-                        <li>
-                            Email: <Link href="mailto:w@hle.rs">w@hle.rs</Link>
-                        </li>
-                        <li>
-                            Github:{' '}
-                            <Link href="https://github.com/claus" rel="me">
-                                claus
-                            </Link>
-                        </li>
-                        <li>
-                            Twitter:{' '}
-                            <Link href="https://twitter.com/cwahlers" rel="me">
-                                @cwahlers
-                            </Link>
-                        </li>
-                        <li>
-                            Mastodon (pt/en):{' '}
-                            <Link
-                                href="https://mastodon.com.br/@claus"
-                                rel="me"
-                            >
-                                @claus@mastodon.com.br
-                            </Link>
-                        </li>
-                        <li>
-                            Mastodon (de/en):{' '}
-                            <Link href="https://chaos.social/@claus" rel="me">
-                                @claus@chaos.social
-                            </Link>
-                        </li>
-                    </ul>
+                    <RichText as="h2" document={contactHeadline} />
+                    <RichText document={contactContent} />
                 </section>
             </div>
         </>
