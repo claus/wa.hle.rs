@@ -1,0 +1,25 @@
+---
+import cx from 'clsx';
+import grid from '@/styles/modules/grid.module.scss';
+import styles from './Home.module.scss';
+---
+
+<div class={cx(styles.root, grid.container)}>
+    <section class={cx(styles.section, 'body')}>
+        <h1 class={styles.sectionHeadline}>Hello! My name is Claus Wahlers. This is my website.</h1>
+        <p>
+            I write software for fun and <a href="https://madeinhaus.com" target="_blank">profit</a
+            >.
+        </p>
+    </section>
+    <section class={cx(styles.section, 'body')}>
+        <h2>How to contact me:</h2>
+        <ul>
+            <li>Github: <a href="https://github.com/claus">claus</a></li>
+            <li>Email: <a href="mailto:w@hle.rs">w@hle.rs</a></li>
+            <li>Bluesky: <a href="https://bsky.app/profile/wa.hle.rs">wa.hle.rs</a></li>
+            <li>Fediverse: <a href="https://mastodon.com.br/@claus">mastodon.com.br</a> (pt/en)</li>
+            <li>Fediverse: <a href="https://chaos.social/@claus">chaos.social</a> (de/en)</li>
+        </ul>
+    </section>
+</div>

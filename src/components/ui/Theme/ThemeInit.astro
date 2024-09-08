@@ -1,0 +1,22 @@
+<script is:inline>
+    const KEY = 'theme';
+    const MQ = '(prefers-color-scheme: dark)';
+
+    function setTheme() {
+        const storedColorScheme = window.localStorage.getItem(KEY);
+        const systemColorScheme = window.matchMedia(MQ).matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = storedColorScheme ?? systemColorScheme;
+        document.documentElement.dataset.themeValue = storedColorScheme ?? 'auto';
+    }
+
+    setTheme();
+
+    document.addEventListener('astro:after-swap', setTheme);
+
+    window.matchMedia(MQ).addEventListener('change', event => {
+        if (window.localStorage.getItem(KEY) == null) {
+            document.documentElement.dataset.theme = event.matches ? 'dark' : 'light';
+            document.documentElement.dataset.themeValue = 'auto';
+        }
+    });
+</script>

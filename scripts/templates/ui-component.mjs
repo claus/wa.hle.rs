@@ -1,29 +1,39 @@
-export const uiComponentJS = name => `import PropTypes from 'prop-types';
-import cx from 'classnames';
-
+export const uiComponentAstro = (name, customElementName) => `---
 import styles from './${name}.module.scss';
 
-const ${name} = ({ className }) => {
-    return (
-        <div className={cx(styles.root, className)}>
+interface Props {
+    className?: string;
+}
 
-        </div>
-    );
-};
+const { className } = Astro.props;
+---
 
-${name}.propTypes = {
-    className: PropTypes.string,
-};
+<${customElementName}>
+    <div class:list={[styles.root, className]}>
+    </div>
+</${customElementName}>
 
-export default ${name};
+<script>
+    class ${name} extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+        }
+
+        disconnectedCallback() {
+        }
+    }
+
+    if (!customElements.get('${customElementName}')) {
+        customElements.define('${customElementName}', ${name});
+    }
+</script>
 `;
 
-export const uiComponentSCSS = () => `@import 'styles/breakpoints';
-@import 'styles/fonts';
+export const uiComponentSCSS = () => `@import '@/styles/breakpoints';
 
 .root {
 }
-`;
-
-export const uiComponentIndex = name => `export { default } from './${name}';
 `;

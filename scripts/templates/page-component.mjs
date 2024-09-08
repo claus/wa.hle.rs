@@ -1,38 +1,44 @@
 export const pageComponentRoute = name => {
-    return `export { default } from 'components/pages/${name}';
+    return `---
+import Layout from '@/layouts/Layout.astro';
+import ${name} from '@/components/pages/${name}/${name}.astro';
+---
+
+<Layout>
+    <${name} />
+</Layout>
 `;
 };
 
-export const pageComponentJS = name => {
-    return `// import PropTypes from 'prop-types';
-
+export const pageComponentAstro = name => {
+    return `---
+import grid from '@/styles/modules/grid.module.scss';
 import styles from './${name}.module.scss';
+---
 
-const ${name} = () => {
-    return (
-        <div className={styles.root}>
-
-        </div>
-    );
-};
-
-${name}.propTypes = {
-};
-
-export default ${name};
+<div class:list={[styles.root, grid.container]}>
+    <hgroup class={styles.header}>
+        <h1>${name}</h1>
+        <p>This is the ${name} page.</p>
+    </hgroup>
+</div>
 `;
 };
 
 export const pageComponentSCSS = () => {
-    return `@import 'styles/breakpoints';
-@import 'styles/fonts';
+    return `@import '@/styles/breakpoints';
 
 .root {
 }
-`;
-};
 
-export const pageComponentIndex = name => {
-    return `export { default } from './${name}';
+.header {
+    grid-column: 1 / -1;
+}
+
+@include medium {
+}
+
+@include large {
+}
 `;
 };

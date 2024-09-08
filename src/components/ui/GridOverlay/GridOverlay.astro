@@ -1,0 +1,47 @@
+---
+import cx from 'clsx';
+
+import grid from '@/styles/modules/grid.module.scss';
+import styles from './GridOverlay.module.scss';
+---
+
+{
+    import.meta.env.DEV && (
+        <x-grid-overlay>
+            <div class:list={[styles.gridOverlay, grid.container]}>
+                {Array.from({ length: 12 }).map((_, i) => {
+                    const columnClass = cx(styles.col, styles[`col${i + 1}`]);
+                    return <div class={columnClass} />;
+                })}
+            </div>
+        </x-grid-overlay>
+    )
+}
+
+<script>
+    class GridOverlay extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+            document.addEventListener('keypress', this.handleKey);
+        }
+
+        disconnectedCallback() {
+            document.removeEventListener('keypress', this.handleKey);
+        }
+
+        private handleKey = (event: KeyboardEvent) => {
+            const target = event.target as HTMLElement;
+            if (event.key === 'g' && target.nodeName !== 'INPUT') {
+                const el = this.querySelector(':scope > div');
+                el?.classList.toggle('visible');
+            }
+        };
+    }
+
+    if (!customElements.get('x-grid-overlay')) {
+        customElements.define('x-grid-overlay', GridOverlay);
+    }
+</script>
