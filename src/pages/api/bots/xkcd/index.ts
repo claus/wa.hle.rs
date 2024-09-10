@@ -113,7 +113,7 @@ async function publishStatus(mediaId: string, comic: XKCDResponseData) {
     const formData = new FormData();
     formData.append('status', `#${comic.num} - ${comic.safe_title}`);
     formData.append('media_ids[]', mediaId);
-    formData.append('visibility', 'direct');
+    formData.append('visibility', 'public');
     const response = await fetch('https://mastodon.com.br/api/v1/statuses', {
         headers: { Authorization: `Bearer ${token}` },
         method: 'POST',
