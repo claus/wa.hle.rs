@@ -1,5 +1,3 @@
-@import '@/styles/breakpoints';
-
 @font-face {
     font-family: 'Volume';
     font-style: normal;
@@ -22,7 +20,7 @@
     line-height: 1.5;
 }
 
-@include large {
+@media (width >= 1280px) {
     .body {
         font-size: 1.8rem;
     }

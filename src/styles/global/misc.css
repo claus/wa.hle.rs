@@ -1,10 +1,8 @@
-@import '@/styles/breakpoints';
-
 :root {
     --header-height: 0;
 }
 
-@include large {
+@media (width >= 1280px) {
     :root {
         --header-height: 0;
     }

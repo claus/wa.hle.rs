@@ -1,0 +1,8 @@
+.root {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    height: 100dvh;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
