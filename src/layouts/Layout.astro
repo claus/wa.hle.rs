@@ -8,7 +8,7 @@ import '@/styles/global/misc.css';
 import '@/styles/global/theme.css';
 import '@/styles/global/typography.css';
 
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 
 import ThemeInit from '@/components/ui/Theme/ThemeInit.astro';
 import GridOverlay from '@/components/ui/GridOverlay/GridOverlay.astro';
@@ -35,20 +35,6 @@ const { title = 'Claus Wahlers' } = Astro.props;
             title="wa.hle.rs"
             href={`${Astro.site}/rss.xml`}
         />
-        <link
-            rel="preload"
-            href="/assets/fonts/volume_tc_regular-webfont.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin="true"
-        />
-        <link
-            rel="preload"
-            href="/assets/fonts/volume_tc_sans-webfont.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin="true"
-        />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -56,7 +42,7 @@ const { title = 'Claus Wahlers' } = Astro.props;
         <link rel="manifest" href="/manifest.webmanifest" />
         <title>{title}</title>
         <ThemeInit />
-        <ViewTransitions />
+        <ClientRouter />
     </head>
     <body>
         <div class:list={[styles.main, 'body']}>

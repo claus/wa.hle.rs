@@ -1,21 +1,5 @@
-@font-face {
-    font-family: 'Volume';
-    font-style: normal;
-    src:
-        local(''),
-        url('/assets/fonts/volume_tc_regular-webfont.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Volume Sans';
-    font-style: normal;
-    src:
-        local(''),
-        url('/assets/fonts/volume_tc_sans-webfont.woff2') format('woff2');
-}
-
 .body {
-    font-family: 'Volume Sans', 'Helvetica', 'Arial', sans-serif;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1.6rem;
     line-height: 1.5;
 }
