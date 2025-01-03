@@ -9,9 +9,9 @@ const blogPosts = await getCollection('blog');
 <Layout>
     <ul>
         {
-            blogPosts.map(({ slug, data }) => (
+            blogPosts.map(({ id, data }) => (
                 <li>
-                    <a href={`/blog/${slug}`}>{data.title}</a>
+                    <a href={`/blog/${id}`}>{data.title}</a>
                     <time datetime={data.publishDate.toISOString()}>
                         {data.publishDate.toDateString()}
                     </time>
