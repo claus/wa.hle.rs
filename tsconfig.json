@@ -1,7 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
   "exclude": [
-    "Carousel"
+    "dist"
   ],
   "compilerOptions": {
     "baseUrl": ".",
@@ -9,8 +13,6 @@
       "@/*": [
         "./src/*"
       ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    }
   }
 }
