@@ -51,16 +51,18 @@ async function verifyCredentials() {
 async function getLatestId() {
     const id = import.meta.env.XKCD_BOT_MASTODON_ACCOUNT_ID;
     const token = import.meta.env.XKCD_BOT_MASTODON_TOKEN;
-    const response = await fetch(`https://mastodon.com.br/api/v1/accounts/${id}/statuses?limit=1`, {
-        headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(
+        `https://mastodon.com.br/api/v1/accounts/${id}/statuses?limit=10`,
+        { headers: { Authorization: `Bearer ${token}` } }
+    );
     const json = await response.json();
-    const status = json[0].content;
-    const match = /#(\d{4,})/.exec(status);
+    const match = json
+        .map((status: any) => /#(\d{4,})/.exec(status.content))
+        .find((match: any) => !!match);
     if (match) {
         return +match[1];
     } else {
-        throw new Error('No XKCD ID found in latest toot');
+        throw new Error('No recent XKCD ID found');
     }
 }
 
