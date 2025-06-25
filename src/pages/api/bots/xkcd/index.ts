@@ -14,7 +14,13 @@ type XKCDResponseData = {
     img2x: string;
 };
 
+const PAUSED = true;
+
 export const GET: APIRoute = async () => {
+    if (PAUSED) {
+        const message = `Bot paused`;
+        return createJsonResponse({ message });
+    }
     try {
         await verifyCredentials();
         const latestId = await getLatestId();
