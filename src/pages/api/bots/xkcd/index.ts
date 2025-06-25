@@ -14,11 +14,8 @@ type XKCDResponseData = {
     img2x: string;
 };
 
-const ACTIVE = import.meta.env.XKCD_BOT_ACTIVE === 'true';
-const PUBLISH = import.meta.env.XKCD_BOT_PUBLISH === 'true';
-
 export const GET: APIRoute = async () => {
-    if (!ACTIVE) {
+    if (import.meta.env.XKCD_BOT_ACTIVE !== 'true') {
         const message = `Bot paused`;
         return createJsonResponse({ message });
     }
@@ -26,7 +23,7 @@ export const GET: APIRoute = async () => {
         await verifyCredentials();
         const latestId = await getLatestId();
         const latestComic = await getLatestComic();
-        if (!PUBLISH) {
+        if (import.meta.env.XKCD_BOT_PUBLISH !== 'true') {
             const message = `Bot inactive`;
             return createJsonResponse({
                 message,
