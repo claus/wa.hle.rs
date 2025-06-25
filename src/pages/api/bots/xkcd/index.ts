@@ -14,8 +14,8 @@ type XKCDResponseData = {
     img2x: string;
 };
 
-const ACTIVE = true;
-const PUBLISH = false;
+const ACTIVE = import.meta.env.XKCD_BOT_ACTIVE === 'true';
+const PUBLISH = import.meta.env.XKCD_BOT_PUBLISH === 'true';
 
 export const GET: APIRoute = async () => {
     if (!ACTIVE) {
