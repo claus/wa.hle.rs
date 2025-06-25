@@ -14,10 +14,11 @@ type XKCDResponseData = {
     img2x: string;
 };
 
-const PAUSED = true;
+const ACTIVE = true;
+const PUBLISH = false;
 
 export const GET: APIRoute = async () => {
-    if (PAUSED) {
+    if (!ACTIVE) {
         const message = `Bot paused`;
         return createJsonResponse({ message });
     }
@@ -25,6 +26,14 @@ export const GET: APIRoute = async () => {
         await verifyCredentials();
         const latestId = await getLatestId();
         const latestComic = await getLatestComic();
+        if (!PUBLISH) {
+            const message = `Bot inactive`;
+            return createJsonResponse({
+                message,
+                latestIdLocal: latestId,
+                latestIdRemote: latestComic.num,
+            });
+        }
         if (latestComic.num > latestId) {
             const image = await downloadImage(latestComic);
             const uploadResult = await uploadImage(image, latestComic);
