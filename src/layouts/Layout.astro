@@ -45,9 +45,9 @@ const { title = 'Claus Wahlers' } = Astro.props;
         <ClientRouter />
     </head>
     <body>
-        <div class:list={[styles.main, 'body']}>
+        <main class:list={[styles.main, 'body']}>
             <slot />
-        </div>
+        </main>
         <GridOverlay />
     </body>
 </html>
