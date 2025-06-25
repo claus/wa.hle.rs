@@ -17,7 +17,11 @@ type XKCDResponseData = {
 export const GET: APIRoute = async () => {
     if (import.meta.env.XKCD_BOT_ACTIVE !== 'true') {
         const message = `Bot paused`;
-        return createJsonResponse({ message });
+        return createJsonResponse({
+            message,
+            active: import.meta.env.XKCD_BOT_ACTIVE,
+            publish: import.meta.env.XKCD_BOT_PUBLISH,
+        });
     }
     try {
         await verifyCredentials();
