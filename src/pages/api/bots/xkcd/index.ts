@@ -16,9 +16,11 @@ type XKCDResponseData = {
 
 const ACTIVE = import.meta.env.XKCD_BOT_ACTIVE;
 const PUBLISH = import.meta.env.XKCD_BOT_PUBLISH;
+const PUBLIC = import.meta.env.XKCD_BOT_PUBLIC;
 
 const isActive = ACTIVE === 'true' || ACTIVE === true;
 const isPublish = PUBLISH === 'true' || PUBLISH === true;
+const isPublic = PUBLIC === 'true' || PUBLIC === true;
 
 export const GET: APIRoute = async () => {
     if (!isActive) {
@@ -133,7 +135,7 @@ async function publishStatus(mediaId: string, comic: XKCDResponseData) {
     const formData = new FormData();
     formData.append('status', `#${comic.num} - ${comic.safe_title}`);
     formData.append('media_ids[]', mediaId);
-    formData.append('visibility', 'public');
+    formData.append('visibility', isPublic ? 'public' : 'direct');
     const response = await fetch('https://mastodon.com.br/api/v1/statuses', {
         headers: { Authorization: `Bearer ${token}` },
         method: 'POST',
