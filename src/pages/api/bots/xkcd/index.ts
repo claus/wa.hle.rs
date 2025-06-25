@@ -14,20 +14,22 @@ type XKCDResponseData = {
     img2x: string;
 };
 
+const ACTIVE = import.meta.env.XKCD_BOT_ACTIVE;
+const PUBLISH = import.meta.env.XKCD_BOT_PUBLISH;
+
+const isActive = ACTIVE === 'true' || ACTIVE === true;
+const isPublish = PUBLISH === 'true' || PUBLISH === true;
+
 export const GET: APIRoute = async () => {
-    if (import.meta.env.XKCD_BOT_ACTIVE !== 'true') {
+    if (!isActive) {
         const message = `Bot paused`;
-        return createJsonResponse({
-            message,
-            active: import.meta.env.XKCD_BOT_ACTIVE,
-            publish: import.meta.env.XKCD_BOT_PUBLISH,
-        });
+        return createJsonResponse({ message });
     }
     try {
         await verifyCredentials();
         const latestId = await getLatestId();
         const latestComic = await getLatestComic();
-        if (import.meta.env.XKCD_BOT_PUBLISH !== 'true') {
+        if (!isPublish) {
             const message = `Bot inactive`;
             return createJsonResponse({
                 message,
