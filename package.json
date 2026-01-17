@@ -45,7 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "figlet": "^1.9.4",
     "inquirer": "^13.2.0",
-    "prettier": "^3.8.0",
+    "prettier": "^3.6.1",
     "prettier-plugin-astro": "^0.14.1",
     "shelljs": "^0.10.0",
     "stylelint": "^17.0.0",
