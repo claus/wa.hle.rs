@@ -14,6 +14,25 @@ export default defineConfig({
     integrations: [sitemap(), mdx()],
     output: 'static',
     adapter,
+    vite: {
+        build: {
+            rollupOptions: {
+                onwarn(warning, warn) {
+                    // Suppress warning from @astrojs/vercel beta - the entrypoint.js
+                    // doesn't have a default export but Astro tries to re-export it.
+                    // TODO: Remove once @astrojs/vercel is updated to fix this
+                    if (
+                        warning.code === 'MISSING_EXPORT' &&
+                        warning.id?.includes('virtual:astro:adapter-entrypoint') &&
+                        warning.binding === 'default'
+                    ) {
+                        return;
+                    }
+                    warn(warning);
+                },
+            },
+        },
+    },
     experimental: {
         fonts: [
             {
