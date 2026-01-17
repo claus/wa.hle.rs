@@ -8,6 +8,7 @@ import '@/styles/global/misc.css';
 import '@/styles/global/theme.css';
 import '@/styles/global/typography.css';
 
+import { Font } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
 
 import ThemeInit from '@/components/ui/Theme/ThemeInit.astro';
@@ -41,6 +42,7 @@ const { title = 'Claus Wahlers' } = Astro.props;
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <title>{title}</title>
+        <Font cssVariable="--font-hel" preload />
         <ThemeInit />
         <ClientRouter />
     </head>
