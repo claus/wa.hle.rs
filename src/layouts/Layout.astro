@@ -9,11 +9,7 @@ import '@/styles/global/theme.css';
 import '@/styles/global/typography.css';
 
 import { Font } from 'astro:assets';
-import { ClientRouter } from 'astro:transitions';
-
 import ThemeInit from '@/components/ui/Theme/ThemeInit.astro';
-import GridOverlay from '@/components/ui/GridOverlay/GridOverlay.astro';
-
 import styles from './Layout.module.css';
 
 interface Props {
@@ -44,12 +40,10 @@ const { title = 'Claus Wahlers' } = Astro.props;
         <title>{title}</title>
         <Font cssVariable="--font-hel" preload />
         <ThemeInit />
-        <ClientRouter />
     </head>
     <body>
         <main class:list={[styles.main, 'body']}>
             <slot />
         </main>
-        <GridOverlay />
     </body>
 </html>
